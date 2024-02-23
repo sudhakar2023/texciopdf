@@ -3,7 +3,7 @@
   display: block;
   padding-top: 80px;
   padding-bottom: 16px;
-  background-color: #7d64ff1c;
+  background-color: #4A90E2; /* Updated to a vibrant blue */
 }
 
 .page_footer p a {
@@ -69,14 +69,14 @@
   line-height: 44px;
   text-align: center;
   border-radius: 50%;
-  background-color: #2988bc29;
+  background-color: #4A90E2; /* Updated to a vibrant blue */
   color: var(--text-primary);
   transition: all 0.2s linear;
 }
 
 .share_btn:hover {
   background-color: var(--primary);
-  color: #fff;
+  color: #4A90E2;
   text-decoration: none;
   transform: rotate(360deg);
 }

@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import styles from "../styles/index.module.css";
 import Share from "../components/Share";
 import useToolsData from "../hooks/useToolsData";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -22,149 +22,97 @@ const Home = () => {
   return (
     <>
       <Head>
-        {/* Anything you add here will be added to this page only */}
-        <title>PDF Online Tools | Free, Easy, and Quick Online PDF tools</title>
+        <title>PDF Online Tools | Premium PDF Editing Solutions</title>
         <meta
           name="description"
-          content="Convert, compress, and edit PDF files online with our free PDF tool. No downloads required. Easily convert PDF to Word, Excel, JPG, PNG, and more."
+          content="Unlock advanced PDF editing, conversion, and collaboration tools with our premium service. Tailored for professionals and businesses seeking efficiency."
         />
-        <meta
-          name="Keywords"
-          content="PDF tool, PDF converter, PDF editor, PDF compressor, online PDF tool, free PDF tool, PDF to Word, PDF to Excel, PDF to JPG, PDF to PNG, edit PDF online, compress PDF online."
-        />
-        {/* You can add your canonical here */}
-        <link
-          rel="canonical"
-          href={`https://www.example.com/`}
-          key="canonical"
-        />
-        {/* You can add your alternate links here, example: */}
-        <link
-          rel="alternate"
-          href={`https://www.example.com/en`}
-          hrefLang="en"
-        />
-        <link
-          rel="alternate"
-          href={`https://www.example.com/es`}
-          hrefLang="es"
-        />
-        <link
-          rel="alternate"
-          href={`https://www.example.com/ar`}
-          hrefLang="ar"
-        />
-        <link
-          rel="alternate"
-          href={`https://www.example.com/zh`}
-          hrefLang="zh"
-        />
-        <link
-          rel="alternate"
-          href={`https://www.example.com/de`}
-          hrefLang="de"
-        />
-        <link
-          rel="alternate"
-          href={`https://www.example.com/fr`}
-          hrefLang="fr"
-        />
-        <link
-          rel="alternate"
-          href={`https://www.example.com/it`}
-          hrefLang="it"
-        />
-        <link
-          rel="alternate"
-          href={`https://www.example.com/pt`}
-          hrefLang="pt"
-        />
-        <link
-          rel="alternate"
-          href={`https://www.example.com/ru`}
-          hrefLang="ru"
-        />
-        <link
-          rel="alternate"
-          href={`https://www.example.com/uk`}
-          hrefLang="uk"
-        />
-        <link
-          rel="alternate"
-          href={`https://www.example.com/id`}
-          hrefLang="id"
-        />
-        <link
-          rel="alternate"
-          href={`https://www.example.com/da`}
-          hrefLang="da"
-        />
-
-        <link
-          rel="alternate"
-          href={`https://www.example.com/nl`}
-          hrefLang="nl"
-        />
-        <link
-          rel="alternate"
-          href={`https://www.example.com/hi`}
-          hrefLang="hi"
-        />
-        <link
-          rel="alternate"
-          href={`https://www.example.com/ko`}
-          hrefLang="ko"
-        />
-        <link
-          rel="alternate"
-          href={`https://www.example.com/ja`}
-          hrefLang="ja"
-        />
+        {/* Additional meta tags and links as needed */}
       </Head>
 
-      <>
-        <main>
-          <header className="page_section header mb-0">
-            <h1 className="title">{t("common:page_header_title")}</h1>
-            <p className="description">{t("common:page_header_text")}</p>
-          </header>
-          <section className="page_section mt-0">
-            <article className="container">
-              <section
-                style={{
-                  marginBottom: "10px",
-                  marginTop: "10px",
-                }}
-              >
-                <div className={styles.grid_container}>
-                  {Object.keys(toolsData).map((key) => (
-                    <Link
-                      key={key}
-                      className={styles.grid_item}
-                      href={toolsData[key].href}
-                      prefetch={false}
-                    >
-                      <div className={styles.grid_content}>
-                        <div className={styles.grid_item_icon}>
-                          {toolsData[key].icon}
-                        </div>
-                        <h2 className={styles.grid_item_title}>
-                          {toolsData[key].title}
-                        </h2>
-                        <p className={styles.grid_item_description}>
-                          {toolsData[key].description}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </section>
-            </article>
-          </section>
+      <main>
+        <header className={`${styles.page_section} ${styles.header} mb-0`}>
+          <h1 className={styles.title}>{t("common:page_header_title")}</h1>
+          <p className={styles.description}>{t("common:page_header_text")}</p>
+        </header>
 
-          <Share />
-        </main>
-      </>
+        {/* Tool Features Section */}
+        <section className={`${styles.page_section} mt-0`}>
+          <article className={styles.container}>
+            <h2 className={styles.section_title}>Explore Our Tools</h2>
+            <div className={styles.grid_container}>
+              {Object.keys(toolsData).map((key) => (
+                <Link
+                  key={key}
+                  className={styles.grid_item}
+                  href={toolsData[key].href}
+                  prefetch={false}
+                >
+                  <div className={styles.grid_content}>
+                    <div className={styles.grid_item_icon}>
+                      {toolsData[key].icon}
+                    </div>
+                    <h3 className={styles.grid_item_title}>
+                      {toolsData[key].title}
+                    </h3>
+                    <p className={styles.grid_item_description}>
+                      {toolsData[key].description}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </article>
+        </section>
+
+        {/* Pricing Plan Section */}
+        <section className={styles.pricing_section}>
+          <h2 className={styles.section_title}>Choose Your Plan</h2>
+          <div className={styles.pricing_container}>
+            {/* Example Plan */}
+            <div className={styles.pricing_plan}>
+              <h3>Professional</h3>
+              <p className={styles.price}>$9.99/month</p>
+              <ul className={styles.features_list}>
+                <li>Unlimited PDF edits</li>
+                <li>Priority support</li>
+                <li>Collaboration features</li>
+                <li>Advanced security</li>
+              </ul>
+              <button className={styles.cta_button}>Get Started</button>
+            </div>
+            {/* Add more plans as needed */}
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className={styles.testimonials_section}>
+          <h2 className={styles.section_title}>Hear From Our Users</h2>
+          <div className={styles.testimonials_container}>
+            {/* Example Testimonial */}
+            <blockquote className={styles.testimonial}>
+              <p>
+                "This tool has revolutionized the way we manage documents.
+                Highly recommend for teams looking for seamless collaboration."
+              </p>
+              <cite>- Jane Doe, Digital Marketer</cite>
+            </blockquote>
+            {/* Add more testimonials as needed */}
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className={styles.cta_section}>
+          <h2>Ready to Elevate Your PDF Game?</h2>
+          <p>
+            Join the professionals using our premium tools to streamline their
+            workflows.
+          </p>
+          <button className={styles.cta_button}>Sign Up Now</button>
+        </section>
+
+        <Share />
+      </main>
     </>
   );
 };

@@ -25,6 +25,8 @@
 .article_header {
   text-align: center;
   width: 100%;
+    background-color: blue;
+
 }
 
 .article_content {
